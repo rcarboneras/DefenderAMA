@@ -1,0 +1,32 @@
+name: manage-azure-policy-4381bec5
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/Configure_Windows_Arc-enabled_machines_to_run_Azure_Monitor_Agent_94f686d6-9a24-4e19-91f1-de937dc171a4/**'
+#      - .github/workflows/manage-azure-policy-4381bec5.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_4381bec5}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/Configure_Windows_Arc-enabled_machines_to_run_Azure_Monitor_Agent_94f686d6-9a24-4e19-91f1-de937dc171a4/**
