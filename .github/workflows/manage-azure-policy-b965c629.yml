@@ -1,0 +1,32 @@
+name: manage-azure-policy-b965c629
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/_Preview_Assign_Built-In_User-Assigned_Managed_Identity_to_Virtual_Machines_d367bd60-64ca-4364-98ea-276775bddd94/**'
+#      - .github/workflows/manage-azure-policy-b965c629.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_b965c629}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/_Preview_Assign_Built-In_User-Assigned_Managed_Identity_to_Virtual_Machines_d367bd60-64ca-4364-98ea-276775bddd94/**
