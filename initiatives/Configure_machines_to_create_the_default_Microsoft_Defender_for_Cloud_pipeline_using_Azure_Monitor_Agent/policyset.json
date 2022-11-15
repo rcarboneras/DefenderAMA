@@ -1,11 +1,11 @@
 {
  "properties": {
-  "displayName": "TestAMAracarb - Configure machines to create the default Microsoft Defender for Cloud pipeline using Azure Monitor Agent",
+  "displayName": "Configure machines with the necesary agents for Microsoft Defender for Cloud pipeline using Azure Monitor Agent",
   "policyType": "Custom",
-  "description": "Configure machines to automatically install the Azure Monitor and Azure Security agents. Microsoft Defender for Cloud collects events from the agents and uses them to provide security alerts and tailored hardening tasks (recommendations). Create a resource group, a Data Collection Rule and Log Analytics workspace in the same region as the machine to store audit records. Target machines must be in a supported location.",
+  "description": "Configure machines to automatically install the Azure Monitor and Azure Security agents. Target machines must be in a supported location.",
   "metadata": {
    "category": "Security Center",
-   "version": "1.0.1-preview",
+   "version": "1.0.0-preview",
    "preview": true,
    "createdBy": "e1a6929c-8d14-4b79-8914-2b0183f6a744",
    "createdOn": "2022-10-20T15:59:36.0554583Z",
@@ -104,18 +104,6 @@
     "groupNames": []
    },
    {
-    "policyDefinitionReferenceId": "MDC_AMA_DefaultPipeline_Deploy_VM",
-    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8b5ad9ab-3d44-4a6e-9ac3-75b04ea5fd28",
-    "parameters": {},
-    "groupNames": []
-   },
-   {
-    "policyDefinitionReferenceId": "MDC_AMA_DefaultPipeline_DCRA_Deploy_VM",
-    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a2ea54a3-9707-45e3-8230-bbda8309d17e",
-    "parameters": {},
-    "groupNames": []
-   },
-   {
     "policyDefinitionReferenceId": "DeployAzureMonitorLinuxAgent_Arc",
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/845857af-0333-4c5d-bbbc-6076697da122",
     "parameters": {},
@@ -136,18 +124,6 @@
    {
     "policyDefinitionReferenceId": "DeployAzureSecurityWindowsAgent_Arc",
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d01f3018-de9f-4d75-8dae-d12c1875da9f",
-    "parameters": {},
-    "groupNames": []
-   },
-   {
-    "policyDefinitionReferenceId": "MDC_AMA_DefaultPipeline_Deploy_Arc",
-    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/3b1a8e0a-b2e1-48be-9365-28be2fbef550",
-    "parameters": {},
-    "groupNames": []
-   },
-   {
-    "policyDefinitionReferenceId": "MDC_AMA_DefaultPipeline_DCRA_Deploy_Arc",
-    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/30f52897-df47-4ca0-81a8-a3be3e8dd226",
     "parameters": {},
     "groupNames": []
    }
