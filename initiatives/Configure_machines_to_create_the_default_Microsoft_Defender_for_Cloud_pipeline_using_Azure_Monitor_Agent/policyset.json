@@ -1,16 +1,11 @@
 {
  "properties": {
-  "displayName": "Configure machines with the necesary agents for Microsoft Defender for Cloud pipeline using Azure Monitor Agent",
+  "displayName": "Configure machines with the necesary agents for Microsoft Defender for Cloud pipeline using Azure Monitor Agent-custom",
   "policyType": "Custom",
   "description": "Configure machines to automatically install the Azure Monitor and Azure Security agents. Target machines must be in a supported location.",
   "metadata": {
    "category": "Security Center",
-   "version": "1.0.0-preview",
-   "preview": true,
-   "createdBy": "e1a6929c-8d14-4b79-8914-2b0183f6a744",
-   "createdOn": "2022-10-20T15:59:36.0554583Z",
-   "updatedBy": null,
-   "updatedOn": null
+   "version": "1.0.0"
   },
   "parameters": {
    "bringYourOwnUserAssignedManagedIdentity": {
@@ -23,7 +18,7 @@
      false,
      true
     ],
-    "defaultValue": false
+    "defaultValue": true
    },
    "userAssignedManagedIdentityName": {
     "type": "String",
@@ -130,7 +125,6 @@
   ],
   "policyDefinitionGroups": []
  },
- "id": "/subscriptions/aa493607-856d-4a59-8546-c633c0508f1f/providers/Microsoft.Authorization/policySetDefinitions/3e55a566460342328a6bb8ca",
- "type": "Microsoft.Authorization/policySetDefinitions",
+ "id": "/providers/Microsoft.Authorization/policySetDefinitions/3e55a566460342328a6bb8ca",
  "name": "3e55a566460342328a6bb8ca"
 }

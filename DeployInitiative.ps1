@@ -17,6 +17,8 @@
    }
 ]#>
 
+
+
 $PolicySetObject = Get-Content ".\initiatives\Configure_machines_to_create_the_default_Microsoft_Defender_for_Cloud_pipeline_using_Azure_Monitor_Agent\policyset.json" | ConvertFrom-Json
 
 $PolicyDefinition = $PolicySetObject.properties.policyDefinitions | ConvertTo-Json -Depth 10
@@ -30,6 +32,7 @@ New-AzPolicySetDefinition -Name 'WDCAgentsPolicySetDefinition'`
 -Parameter $PolicyParameters `
 -Metadata $PolicyMetadata `
 -Description $PolicyDescription `
--DisplayName $PolicyDisplayName
+-DisplayName $PolicyDisplayName `
+-ManagementGroupName "MG-ROOT"
 
 
